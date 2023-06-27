@@ -1,0 +1,46 @@
+Como_____ -> tipo de usuário, cargo, papel, função
+eu quero_____ -> objetivo, necessidade do cliente
+Para que______ -> benefíco que a pessoa terá quando en
+
+Quanto mais especifico, melhor
+
+--
+Como [correntista] eu quero poder [sacar dinheiro do caixa eletronico apenas com a digital] para que [eu não precise sair de casa com cartão do banco].
+
+///
+é 1 salão -> festa q auditório
+Trabalho voluntário
+Horas trabalhadas?
+Acesso via mobile ou pc//pessoas com problema de visão
+Marrom, Verde, Amarelo, Laranja
+Natureza Viva -> nome;
+
+
+--
+Dois usuários: Administrador (cadastrar possíveis espaços, datas e horários para aluguel) e cliente.
+
+Administrador: /cadastrar possíveis espaços, datas e horários para aluguel, confirmação do uso do espaço e fechamento de aluguel (com avaliação)[caso não haja irregularidade], inseri períodos para aluguel (deesde que não haja agendamentos)
+
+Consultar agendamentos por espaço ou mês
+
+
+
+
+Cliente: alugar o espaço uma única vez até receber avaliação. Incluir e alterar e deletar os agendamentos [caso não tenham sidos confirmados pelo adm]
+-Também é importante uma
+funcionalidade para consultar os agendamentos que foram feitos.
+
+
+
+1 Tela: Login
+2 Tela: Cadastro
+3 Tela: Esqueceu a senha -x
+4 Tela: Mudar senha
+5 Tela: Cadastro (ADM): se é festa ou auditório, dias e horários disponíveis (abertura)
+6 Tela: Confirmação: ADM confirma a data.
+7 Tela: Pós uso: ADM avalia se após o uso, o espaço está ok e fecha aluguel.
+8 Tela: Mostrar os próximos agendamentos.
+9 Tela: Cliente aluga o espaço, altera e dela os aendamentos [caso não sejam confirmados pelo adm]
+10: Tela ver histórico.
+
+

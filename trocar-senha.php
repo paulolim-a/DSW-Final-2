@@ -1,32 +1,12 @@
 <?php
     session_start();
-    // print_r($_SESSION);
-    if((!isset($_SESSION['user']) == true) and (!isset($_SESSION['pasw']) == true)){
-        
-        unset($_SESSION['user']);
-        unset($_SESSION['pasw']);
-        header('Location: login.php');
+    if(isset($_SESSION['password']) && isset($_SESSION['user_name'])){
 
-    } else{
-        $logado = $_SESSION['user'];
+    }else{
+        header("Location: login.php");
+        exit();
     }
 
-    if(isset(($_POST['submit'])) && ($_POST['pasw'] == '123456') && !empty($_POST['newpasw'])){
-
-
-        include_once('config.php');
-
-        $passwordtb = $_POST['newpasw'];
-
-        // $sql_code = "UPDATE usuarios SET passwordtb = '$passwordtb' WHERE passwordtb = '123456'";
-
-
-        $result = mysqli_query($conexao, "UPDATE usuarios SET passwordtb = '$passwordtb' WHERE passwordtb = '123456'");
-        
-        // (name,logintb,passwordtb,email) VALUES ('$name','$logintb','$passwordtb','$email')");
-
-        header('Location: login.php');
-    }
 ?>
 
 <!DOCTYPE html>
@@ -58,11 +38,15 @@
                 </div>
 
                 <div class="msgAdm">
-                    <h2>Olá Administrador!! Favor trocar sua senha</p>
+                <?php if (isset($_GET['success'])) { ?>
+                            <h2 class="admPrimeiroAcesso"><?php echo $_GET['success']; ?></h2>
+                    <?php } elseif (isset($_GET['error'])) {?>
+                        <h2 class="erroTrocaSenha"><?php echo $_GET['error']; ?></h2>
+                        <?php } ?>
                 </div>
     
                 <div class="formlogin">
-                    <form action="trocar-senha.php" method="post">
+                    <form action="validaTrocaSenha.php" method="post">
     
                         <div class="inputBox password">
                             <label for="ipasw">Senha Atual: </label>
@@ -76,6 +60,12 @@
     
                         <div class="botoesLogin">
                             <input type="submit" name="submit" value="Enter" alt="Botão de enviar">
+                        </div>
+
+                        <div class="loginFooter">
+                        <div class="cadastrar">
+                                <p>Voltar<a href="home.php">a página Home!</a></p>
+                            </div>
                         </div>
     
                     </form>

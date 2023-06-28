@@ -13,6 +13,7 @@ include "configConexao.php";
 
         $usname = validate($_POST['userName']);
         $passw = validate($_POST['password']);
+        $passw = md5($passw);
 
         if(empty($usname)){
 
@@ -30,19 +31,20 @@ include "configConexao.php";
             $result = mysqli_query($conexao, $sql);
 
             if(mysqli_num_rows($result) === 1){
-
-                if($row['user_name'] === 'admin' && $row['password'] === '123456'){
-                    header("Location: trocar-senha.php");
-                }else{
-                    echo 'teste;'
-                }
                 
                 $row = mysqli_fetch_assoc($result);
                 if($row['user_name'] === $usname && $row['password'] === $passw){
                     $_SESSION['user_name'] =$row['user_name'];
                     $_SESSION['name'] =$row['name'];
                     $_SESSION['password'] =$row['password'];
-                    header("Location: home.php");
+
+                    if($usname === "admin" && $passw === md5("123456")){
+                        header("Location: trocar-senha.php?success=Olá Administrador! Favor trocar sua senha!");
+                        exit();
+                    }else{
+                        header("Location: home.php");
+                    }
+
                 }
             }else{
                 header("Location: login.php?error=Senha ou usuário incorreto!");

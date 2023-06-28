@@ -25,7 +25,7 @@ include "configConexao.php";
 
         if(mysqli_num_rows($result) > 0){
             header("Location: cadastro.php?error=Esse Usuário já existe!&$user_data");
-            exit();   
+            exit();  
         }else{
 
             $sqlInsert = "INSERT INTO usuarios(name, user_name, password, email) VALUES('$name', '$usname', '$passw', '$email')";

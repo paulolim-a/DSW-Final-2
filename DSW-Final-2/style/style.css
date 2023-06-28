@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* @font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+} */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root{
+    --cor0:#260115;
+    --cor1:#1E0010;
+    --cor2:#8C3F23;
+    --cor3:#BF622C;
+    --cor4:#F27B35;
+    --cor5:#6b1a1a;
+
+    --default-font: Arial, Verdana, Helvetica, sans-serif;
+    --show-font: 'Bebas Neue', sans-serif;
+    /* --android-font: 'Android', 'cursive'; */
+}
+
+/* https://fonts.google.com/specimen/Encode+Sans */
+/* https://fonts.google.com/specimen/Courgette?category=Handwriting */
+
+#telaLogin{
+
+    height: 100vh;
+    width: 100%;
+
+    position: relative;
+    background-image: url(../images/test-login.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#telaLogin::before{
+    content: '';
+    background-color: rgba(0, 0, 0, 0.536);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+        /* top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; */
+    
+}
+
+.logologin{
+    margin: auto;
+    grid-column: 3;
+    grid-row: 1;
+    z-index: 10;
+}
+
+.logologin img{
+    width: 150px;
+}
+
+
+#blocologin{
+    border: 1px solid black ;
+    height: 90%;
+    width: 300px;
+    background-color: var(--cor5);
+    opacity: 90%;
+
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.51);
+
+    grid-column: 3;
+    grid-row: 3;
+    
+}
+
+.msgAdm > h2{
+    display: block;
+    text-align: center;
+
+}
+
+.titulologin, .tituloCadastro{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--cor4);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px;  
+}
+
+.tituloCadastro{
+    font-size: clamp(1em, 3vw, 2em);
+}
+
+.inputBox{
+    margin-bottom: 20px;
+}
+
+.inputBox label{
+    font-size: 1.2em;
+    color: var(--cor4);
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.inputBox input{
+    height: 25px;
+    width: 100%;    
+    border-radius: 5px;
+}
+
+.inputBox input:hover{
+    border: 4px solid var(--cor5);
+}
+
+.inputBox input:focus-within{
+    background-color: white;
+    border: none;
+}
+
+
+
+.botoesLogin{
+    text-align: right;
+    
+}
+
+.botoesLogin input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: var(--cor1);
+    color: var(--cor4);
+    font-size: 1.4em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.botoesLogin input:hover{
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.51);
+    cursor: pointer;
+}
+
+.botoesLogin input:active{
+    transform: scale(95%);
+}
+
+.loginFooter p{
+    font-size: 1em;
+    font-weight: bold;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.msgAdm > h2{
+    
+    padding: 10px;
+}
+
+.loginFooter a, .msgAdm > h2 {
+    text-decoration: none;
+    color: var(--cor4);
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.loginFooter a:hover{
+    text-decoration: underline;
+}
